@@ -35,7 +35,7 @@ class Solution:
         for i in s:
             if i in ss:
                 ss = ss[ss.index(i)+1:]
-            # getting one substring at a time by order like "abcbcacc"-> 1"abc" 2"cb" 3"bca" 4"ac"5"c" 
+            # getting one substring at a time without repeating characters by order like "abcbcacc"-> 1"abc" 2"cb" 3"bca" 4"ac"5"c" 
             ss.append(i)
             #get aways the max length 
             max_len = max(max_len, len(ss))
