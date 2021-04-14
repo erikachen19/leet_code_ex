@@ -60,10 +60,10 @@ class Solution:
         res = []
         for i in range(0,len(s)):
             print(i)
-            #compre s[n-1]'s value  and s[n]'s value, 
-            #like "IV", (s[0] = I dictlist['I'] =1 , s[1] = V, dictlist['V'] =5), so s[0]<s[1], 
-            #so s[0]'s value = s[0]'s value * -1
+            #compre s[n-1]'s value  and s[n]'s value 
             if i !=0 and (dictlist[s[i]]>dictlist[s[i-1]]):
+                #like "IV", (s[0] = I dictlist['I'] =1 , s[1] = V, dictlist['V'] =5), so s[0]<s[1], 
+                #so s[0]'s value = s[0]'s value * -1 and s[1]=dictlist[s[1]] 
                 nu = dictlist[s[i]]
                 print('s[i-1]+s[i]')
                 print(s[i-1]+s[i])
@@ -71,6 +71,8 @@ class Solution:
                 res[i-1]=res[i-1]*(-1)
                 print(res)
             else:
+                #like "IVI", (s[1] = V dictlist['V'] =5 , s[2] = I, dictlist['I'] =1), so s[1]>s[2], 
+                #so s[2]'s value =dictlist[s[2]]               
                 print('s[i]')
                 print(s[i])
                 nu = dictlist[s[i]]
