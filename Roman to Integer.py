@@ -49,5 +49,35 @@
 #1 <= s.length <= 15
 #s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 #It is guaranteed that s is a valid roman numeral in the range [1, 3999].
-
+###############################################################################################
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        dictlist = {'I':1,'V':5,'X':10,
+                   'L':50,
+                   'C':100,
+                   'D':500,
+                   'M':1000}
+        res = []
+        for i in range(0,len(s)):
+            print(i)
+            #compre s[n-1]'s value  and s[n]'s value, 
+            #like "IV", (s[0] = I dictlist['I'] =1 , s[1] = V, dictlist['V'] =5), so s[0]<s[1], 
+            #so s[0]'s value = s[0]'s value * -1
+            if i !=0 and (dictlist[s[i]]>dictlist[s[i-1]]):
+                nu = dictlist[s[i]]
+                print('s[i-1]+s[i]')
+                print(s[i-1]+s[i])
+                res.append(nu)
+                res[i-1]=res[i-1]*(-1)
+                print(res)
+            else:
+                print('s[i]')
+                print(s[i])
+                nu = dictlist[s[i]]
+                print('else')
+                res.append(nu)                
+                print(res)
+                         
+        return sum(res)            
+###############################################################################################
 
