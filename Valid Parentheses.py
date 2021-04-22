@@ -37,10 +37,10 @@ class Solution:
         b = []
         for i in s:
             if i in list(key_dict.keys()):
-                b.append(i)                            # example: [{()}]: b = [ "[","{","(" ]
+                b.append(i)                            # example 1: [{()}]: b = [ "[","{","(" ]
             elif len(b)>0 and key_dict[b[-1]]==i:      #if the next ")" -> b = [ "[","{" ],  "{"-> b = ["["], LIFO last in first out  
-                b.pop()                                #another example: {}()[]: b = ["{"]   the next "}" -> b = [] 
-            else:
+                b.pop()                                #example 2: {}()[]: b = ["{"]   the next "}" -> b = [] 
+            else:                                      #example 3: ([)] : b = ["(", "["] the next needs to be "[" -> False
                 return False
         if len(b)==0:
             return True
