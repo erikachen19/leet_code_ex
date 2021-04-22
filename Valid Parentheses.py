@@ -38,7 +38,7 @@ class Solution:
         for i in s:
             if i in list(key_dict.keys()):
                 b.append(i)                            # example: [{()}]: b = [ "[","{","(" ]
-            elif len(b)>0 and key_dict[b[-1]]==i:      #if the next ")" -> b = [ "[","{" ],  "{"-> b = ["["], LIFO last in frist out  
+            elif len(b)>0 and key_dict[b[-1]]==i:      #if the next ")" -> b = [ "[","{" ],  "{"-> b = ["["], LIFO last in first out  
                 b.pop()                                #another example: {}()[]: b = ["{"]   the next "}" -> b = [] 
             else:
                 return False
